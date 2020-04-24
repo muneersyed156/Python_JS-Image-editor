@@ -1,0 +1,129 @@
+.board{
+    height:10vh;
+    width:90vw;
+    margin-top:2vh;
+    margin-left:3vw;
+    border:3px solid rgb(199,199,199);
+    border-radius: 10px;
+    align-content: center;
+}
+
+button,input{
+    margin-top:3vh;
+    margin-left:0vw;
+    cursor: pointer;
+}
+
+#height,#width{
+    margin-left:1vw;
+    margin-top:3vh;
+}
+label{
+    margin-top:2vh;
+    margin-left:4px;    
+}
+
+#image{
+    margin-left:15vw;
+    margin-top:1vh;
+}
+#canvas {
+    height:80vh;
+    width:70vw;
+    height:2000px;
+    border: 10px solid transparent;
+}
+.controls{
+    float:right;
+    height:60vh;
+    width:10vw;
+    margin-top:1vh;
+    border:3px solid rgb(199,199,199);
+    border-radius:10px;
+    margin-right:2vw;
+    align-content: center;
+}
+
+.right{
+    margin-left:1vw;
+    margin-top:1vh;
+}
+
+.right>button{
+    margin-bottom: 2px;
+}
+
+.images{
+    float:left;
+    border:1px solid black;
+    border-radius:4px;
+    margin-top:2vh;
+    margin-left:1vw;
+    height:80vh;
+    width:70vw;
+    background-color: black;
+    align-content: center;
+}
+
+.rectangle {
+    border: 1px solid #FF0000;
+    position: absolute;
+}
+
+#canvas{
+    height:200;
+    width:450;
+}
+
+#edit,#undo,#color{
+    margin-left:3vw;
+}
+
+#color{
+    cursor: pointer;
+}
+
+.text{
+    float:right;
+    height:19.5vh;
+    margin-right:2vw;
+    margin-top:1vh;
+    width:22vw;
+    margin-left:0vw;
+    border:3px solid rgb(199,199,199);
+    border-radius:4px;
+}
+
+#f1{
+    margin-left:2vw;
+}
+
+#editor{
+    border:1px solid grey;
+    height:98vh;
+    width:98vw;
+    align-content: center;
+    border-radius: 10px;
+    background-color: rgb(220,143,86);
+}
+
+#sentence{
+    margin-left:3vw;
+    height:4vh;
+    border:1px solid black;
+    border-radius:7px;
+    text-align: center;
+    size:2.5vh;
+    cursor: auto;
+}
+
+button{
+    padding:3px 4px 4px 3px;
+    border-radius: 7px;
+    box-shadow: none;
+    box-sizing: none;
+    font-size: 15px;
+}
+
+
+

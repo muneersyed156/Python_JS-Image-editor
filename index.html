@@ -1,0 +1,99 @@
+<html>
+
+<head>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c904a1acde.js"></script>
+    <link href="index.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="C:\Users\MUNEER\Desktop\EDITS\favicon.ico" type="image/png">
+    <title>Python_JS Image editor</title>
+
+</head>
+
+<body>
+    <div id="editor">
+        <div class="board">
+            <label style="font-size:20px;font-family:'Times New Roman', Times, serif">height<input type="range"
+                    id="height" min="20" max="500">
+            </label>
+            <lable id="heightval">0</lable>
+            <label style="font-size:20px;font-family:'Times New Roman', Times, serif">width<input type="range"
+                    id="width" min="20" max="650">
+            </label><label id="widthval">0</label>
+            <input type="file" id="f1" accept=".png, .jpg, .jpeg,.doc,.pdf"
+                style="font-size:16px;font-family:'Times New Roman', Times, serif">
+            <button id="edit">Edit<label><i class="fas fa-edit"></label></i></button>
+            <button id="undo">Undo<label><i class="fas fa-undo"></i></label></button>
+            <input type="color" id="color">
+            <button id="new1">New Slide<label><i class="far fa-file"></i></label></button>
+        </div>
+        <div class="controls">
+            <div class="right">
+                <label style="font-size:17px;">Sharpness: <label id="sharpvalue"
+                        style="color: crimson;background-color: black;">0</label></label>
+                <input type="range" min=0.0 max=2 step=0.1 id="sharpness">
+            </div>
+            <div class="right">
+                <button id="sharp">Sharpen<label style="color:orangered"><i class="fas fa-khanda"></label></i></button>
+            </div>
+            <div class="right">
+                <label style="font-size:17px;">Contrast: <label id="contrastvalue"
+                        style="color: greenyellow;background-color: black;margin-left: 12px;">0</label></label>
+                <input type="range" min=0 max=2 step=0.1 id="contrastness">
+            </div>
+            <div class="right">
+                <button id="contrast">Contrast<label style="color:green"><i
+                            class="fab fa-asymmetrik"></label></i></button>
+            </div>
+            <div class="right">
+                <label style="font-size:17px;">Bright: <label id="brightvalue"
+                        style="color:yellow;background-color: black;margin-left: 23px">0</label></label>
+                <input type="range" min=0 max=2 step=0.1 id="brightness">
+            </div>
+            <div class="right">
+                <button id="bright">Brightness<label style="color:darkorange"><i
+                            class="far fa-lightbulb"></label></i></button>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="right">
+                <label style="font-size:17px;">Rotate: <label id="rotatevalue"
+                        style="color:yellow;background-color: black;margin-left: 23px">0</label></label>
+                <input type="range" min=0 max=360 step=1 id="rotatenum">
+            </div>
+            <div class="right">
+                <button id="rotate">Rotate<label><i class="fas fa-sync-alt"></label></i></button>
+            </div>
+            <div class="right">
+                <button id="flipx">Flip in x side<label><i class="fas fa-arrows-alt-h"></i></label></button>
+            </div>
+            <div class="right">
+                <button id="flipy">Flip vertically<label><i class="fas fa-arrows-alt-v"></i></label></button>
+            </div>
+            <div class="right">
+                <button id="tocrop">crop<label><i class="fas fa-crop"></i></label></button>
+                <button id="enableCropping" disabled>Grab</button>
+            </div>
+            <div class="right">
+                <button id="save">Download<label style="color: blue;"><i class="fas fa-download"></label></i></button>
+            </div>
+        </div>
+        <div class="images">
+            <div id="canvas">
+                <img src="black.jpg" id="image" />
+            </div>
+        </div>
+        <div class="text">
+            Add Text: <input type="checkbox" id="addtext">
+            <label id="textlab">Text to be placed:</label>
+            <input type="text" id="sentence">
+            <button id="placetext">Place text</button>
+        </div>
+    </div>
+    <audio id="my_audio" src="./bensound-endlessmotion.mp3" loop="loop"></audio>
+    <script src="index.js" type="text/javascript"></script>
+
+</body>
+
+</html>
