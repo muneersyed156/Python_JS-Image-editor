@@ -24,4 +24,5 @@ Features present:
 
 The left image is the original and the right image is the edited image. By playing with the brightness, sharpness, contrast of image we can generate images of much more clarity. This could be most useful for blurred images.
 
+This application is not yet responsive.It will be updated to responsive version soon!
 Any bugs in this editor will be fixed soon! Any developer who would like to contribute is always Welcome 😊👍.
