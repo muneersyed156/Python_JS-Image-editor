@@ -1,4 +1,4 @@
-This repository has this list of files:
+This repository has this list of files/folders:
 1. cache-This is to store the images temporarily while editing this follows "LIFO"(Last in First Out) like a stack
 2. editedpics- When the image needs to be saved after editing it the target edited image will be saved here when we download it.
 3. index.html- It provides a web-interface to communicate with the image. It was designed with an idea of using it flexibly from Web as well as in the localhost. 
