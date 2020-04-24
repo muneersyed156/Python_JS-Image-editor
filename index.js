@@ -128,11 +128,11 @@ tocrop.addEventListener("click", function () {
 })
 function initDraw(canvas) {
     function setMousePosition(e) {
-        var ev = e || window.event; //Moz || IE
-        if (ev.pageX) { //Moz
+        var ev = e || window.event;
+        if (ev.pageX) {
             mouse.x = ev.pageX + window.pageXOffset;
             mouse.y = ev.pageY + window.pageYOffset;
-        } else if (ev.clientX) { //IE
+        } else if (ev.clientX) {
             mouse.x = ev.clientX + document.body.scrollLeft;
             mouse.y = ev.clientY + document.body.scrollTop;
         }
@@ -411,21 +411,3 @@ bright.addEventListener("click", function () {
     })
 })
 
-/*
-function hex2rgb(colour) {
-    var r, g, b;
-    if (colour.charAt(0) == '#') {
-        colour = colour.substr(1);
-    }
-    if (colour.length == 3) {
-        colour = colour.substr(0, 1) + colour.substr(0, 1) + colour.substr(1, 2) + colour.substr(1, 2) + colour.substr(2, 3) + colour.substr(2, 3);
-    }
-    r = colour.charAt(0) + '' + colour.charAt(1);
-    g = colour.charAt(2) + '' + colour.charAt(3);
-    b = colour.charAt(4) + '' + colour.charAt(5);
-    r = parseInt(r, 16);
-    g = parseInt(g, 16);
-    b = parseInt(b, 16);
-    return (r.toString() + ',' + g.toString() + ',' + b.toString())
-}
-*/
