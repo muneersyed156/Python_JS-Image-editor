@@ -164,4 +164,4 @@ def save_image(f,p):
     return("Done!")
 
 if __name__ == '__main__':
-    app.run(host="192.168.43.227",debug=True)
+    app.run(host="*.*.*.*",debug=True)#"*.*.*.*" represnts localhost/server IP address 
