@@ -65,7 +65,7 @@ save.addEventListener("click", function () {
         t = t.split("/")
         t = t[t.length - 2] + "/" + t[t.length - 1]
     }
-    $.get("http://192.168.43.227:5000/save/" + t, function (data, status) {
+    $.get("http://127.0.0.1:8000/save/" + t, function (data, status) {
         console.log("Done!")
         image.src = "black.jpg"
         alert("The edited image is successfully stored in the editedpics folder :-)")
@@ -89,7 +89,7 @@ new1.addEventListener("click", function () {
     b = parseInt(b, 16);
     k1 = r + "," + g + "," + b
     edited = true
-    $.get("http://192.168.43.227:5000/create/" + heightval.innerHTML.toString() + "/" + widthval.innerHTML.toString() + "/" + k1 + "/" + count.toString(), function (data, status) {
+    $.get("http://127.0.0.1:8000/create/" + heightval.innerHTML.toString() + "/" + widthval.innerHTML.toString() + "/" + k1 + "/" + count.toString(), function (data, status) {
         image.src = "./cache/new" + count.toString() + ".jpg"
         l.push("./cache/new" + count.toString() + ".jpg")
         count += 1
@@ -113,7 +113,7 @@ enablecropping.addEventListener("click", function () {
         t = t[t.length - 2] + "/" + t[t.length - 1]
     }
     q = cropped[0].toString() + "," + cropped[1].toString() + "," + cropped[2].toString() + "," + cropped[3].toString()
-    $.get("http://192.168.43.227:5000/grab/" + t + "/" + q + "/" + count.toString(), function (data, status) {
+    $.get("http://127.0.0.1:8000/grab/" + t + "/" + q + "/" + count.toString(), function (data, status) {
         console.log("Showing rotated image!")
         image.src = "./cache/new" + count.toString() + ".jpg"
         l.push("./cache/new" + count.toString() + ".jpg")
@@ -210,7 +210,7 @@ flipx.addEventListener("click", function () {
         t = t.split("/")
         t = t[t.length - 2] + "/" + t[t.length - 1]
     }
-    $.get("http://192.168.43.227:5000/flip/" + t + "/" + '1' + "/" + count.toString(), function (data, status) {
+    $.get("http://127.0.0.1:8000/flip/" + t + "/" + '1' + "/" + count.toString(), function (data, status) {
         console.log("Showing flippedx image!")
         image.src = "./cache/new" + count.toString() + ".jpg"
         l.push("./cache/new" + count.toString() + ".jpg")
@@ -232,7 +232,7 @@ flipy.addEventListener("click", function () {
         t = t.split("/")
         t = t[t.length - 2] + "/" + t[t.length - 1]
     }
-    $.get("http://192.168.43.227:5000/flip/" + t + "/" + '0' + "/" + count.toString(), function (data, status) {
+    $.get("http://127.0.0.1:8000/flip/" + t + "/" + '0' + "/" + count.toString(), function (data, status) {
         console.log("Showing flippedy image!")
         image.src = "./cache/new" + count.toString() + ".jpg"
         l.push("./cache/new" + count.toString() + ".jpg")
@@ -261,7 +261,7 @@ rotate.addEventListener("click", function () {
     }
     valuetoberoated = rotatevalue.innerHTML
     console.log(valuetoberoated)
-    $.get("http://192.168.43.227:5000/rotate/" + t + "/" + valuetoberoated + "/" + count.toString(), function (data, status) {
+    $.get("http://127.0.0.1:8000/rotate/" + t + "/" + valuetoberoated + "/" + count.toString(), function (data, status) {
         console.log("Showing rotated image!")
         image.src = "./cache/new" + count.toString() + ".jpg"
         l.push("./cache/new" + count.toString() + ".jpg")
@@ -296,7 +296,7 @@ undo.addEventListener("click", function () {
         console.log(p)
         image.src = l[l.length - 1]
         count = l.length - 1
-        $.get("http://192.168.43.227:5000/delete/" + p, function (data, status) {
+        $.get("http://127.0.0.1:8000/delete/" + p, function (data, status) {
             console.log("Deleted!")
             console.log(data)
         })
@@ -354,7 +354,8 @@ sharp.addEventListener("click", function () {
     }
     factor = sharpvalue.innerHTML
     console.log(factor)
-    $.get("http:///192.168.43.227:5000/sharpen/" + t + "/" + factor.toString() + "/" + count.toString(), function (data, status) {
+    k="sharp"
+    $.get("http://127.0.0.1:8000/"+k+"/" + t + "/" + factor.toString() + "/" + count.toString(), function (data, status) {
         console.log("Showing sharped image!")
         image.src = "./cache/new" + count.toString() + ".jpg"
         l.push("./cache/new" + count.toString() + ".jpg")
@@ -378,7 +379,8 @@ contrast.addEventListener("click", function () {
         t = t[t.length - 2] + "/" + t[t.length - 1]
     }
     factor = contrastvalue.innerHTML
-    $.get("http://192.168.43.227:5000/contrast/" + t + "/" + factor.toString() + "/" + count.toString(), function (data, status) {
+    k="contrast"
+    $.get("http://127.0.0.1:8000/"+k+"/" + t + "/" + factor.toString() + "/" + count.toString(), function (data, status) {
         console.log("Showing contrasted image!")
         image.src = "./cache/new" + count.toString() + ".jpg"
         l.push("./cache/new" + count.toString() + ".jpg")
@@ -402,7 +404,8 @@ bright.addEventListener("click", function () {
         t = t[t.length - 2] + "/" + t[t.length - 1]
     }
     factor = brightvalue.innerHTML
-    $.get("http://192.168.43.227:5000/bright/" + t + "/" + factor.toString() + "/" + count.toString(), function (data, status) {
+    k="bright"
+    $.get("http://127.0.0.1:8000/"+k+"/" + t + "/" + factor.toString() + "/" + count.toString(), function (data, status) {
         console.log("Showing brightened image!")
         image.src = "./cache/new" + count.toString() + ".jpg"
         l.push("./cache/new" + count.toString() + ".jpg")
