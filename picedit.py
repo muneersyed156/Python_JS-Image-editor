@@ -1,7 +1,7 @@
 from PIL import Image
 from PIL import ImageEnhance
 import numpy as np
-from flask import Flask,jsonify
+from flask import Flask,jsonify,render_template
 from flask_cors import CORS, cross_origin
 import os
 import cv2
@@ -13,39 +13,27 @@ app=Flask(__name__)
 @app.route("/")
 @cross_origin(allow_headers=['Content-Type','Authorization'])
 def hello():
-    return("Hello flask!")
+    print("Hello flask!")
+    return(render_template("index.html"))
 
 @app.route("/<m>")
 @cross_origin(allow_headers=['Content-Type','Authorization'])
 def messgae(m):
     return(jsonify(message=str(m)))
 
-@app.route("/sharpen/<m>/<factor>/<c>")
+@app.route("/<k>/<m>/<factor>/<c>")
 @cross_origin(allow_headers=['Content-Type','Authorization'])
-def adjust_sharpness(m,c,factor):
+def adjust_feature(k,m,c,factor):
     image = Image.open(m)
-    enhancer_object = ImageEnhance.Sharpness(image)
+    if(k=="sharp"):
+    	enhancer_object = ImageEnhance.Sharpness(image)
+    if(k=="contrast"):
+        enhancer_object = ImageEnhance.Contrast(image)
+    if(k=="bright"):
+        enhancer_object = ImageEnhance.Brightness(image)
     out = enhancer_object.enhance(float(factor))
     out.save("./cache/new"+str(c)+".jpg")
-    return("Sharped!")
-
-@app.route("/bright/<m>/<factor>/<c>")
-@cross_origin(allow_headers=['Content-Type','Authorization'])
-def adjust_brightness(m,c,factor):
-    image = Image.open(m)
-    enhancer_object = ImageEnhance.Brightness(image)
-    out = enhancer_object.enhance(float(factor))
-    out.save("./cache/new"+str(c)+".jpg")
-    return("brightened!")
-
-@app.route("/contrast/<m>/<factor>/<c>")
-@cross_origin(allow_headers=['Content-Type','Authorization'])
-def adjust_contrast(m,c, factor):
-    image = Image.open(m)
-    enhancer_object = ImageEnhance.Contrast(image)
-    out = enhancer_object.enhance(float(factor))
-    out.save("./cache/new"+str(c)+".jpg")
-    return("Contrasted!")
+    return("Process {} is DOne!".format(k))
 
 @app.route("/sharpen/<m>/<n>/<factor>/<c>")
 @cross_origin(allow_headers=['Content-Type','Authorization'])
@@ -164,4 +152,4 @@ def save_image(f,p):
     return("Done!")
 
 if __name__ == '__main__':
-    app.run(host="*.*.*.*",debug=True)#"*.*.*.*" represnts localhost/server IP address 
+    app.run(host="127.0.0.1",debug=True,port=8000)#"*.*.*.*" represnts localhost/server IP address 
