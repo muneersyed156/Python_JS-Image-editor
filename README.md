@@ -1,11 +1,12 @@
-Python_JS-Image-editor
+## Python_JS-Image-editor
 Simple Image Editor developed in Python(Flask),UI(HTML5,CSS3)
 1. Editing an image-Brightness, Sharpness, Contrast
 2. Flipping an image
 3. Rotating an image
 4. Adjusting their sizes 
 
-Dependencies
+## Dependencies
+
 
 Requires python3 and following libraries
 1. PIL
@@ -14,15 +15,15 @@ Requires python3 and following libraries
 4. os
 5. cv2
 
-How to use
+## How to use
 
-Running
+# Running
 
 In the command line run the flask server i.e picedit.py using following command
 
 python3 picedit.py   then access the index.html by clicking on index.html file
 
-Procedure to Use:
+# Procedure to Use:
 
 1. create a folder called cache before starting the editing process
 2. Now click on choose file and select a .jpg/.png file
