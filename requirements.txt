@@ -82,7 +82,7 @@ python-magic==0.4.18
 pyttsx3==2.87
 pytz==2020.1
 pyxdg==0.25
-PyYAML==3.12
+PyYAML==5.1
 regex==2020.7.14
 reportlab==3.4.0
 requests==2.24.0
