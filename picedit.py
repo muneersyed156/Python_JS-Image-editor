@@ -1,6 +1,5 @@
 from PIL import Image
 from PIL import ImageEnhance
-import numpy as np
 from flask import Flask,jsonify,render_template
 from flask_cors import CORS, cross_origin
 import os
