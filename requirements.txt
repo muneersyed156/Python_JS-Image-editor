@@ -14,7 +14,7 @@ click==7.1.2
 command-not-found==0.3
 comment-parser==1.2.2
 comtypes==1.1.7
-cryptography==2.1.4
+cryptography==2.3
 cupshelpers==1.0
 cycler==0.10.0
 defer==1.0.6
