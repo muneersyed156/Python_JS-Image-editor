@@ -1,6 +1,6 @@
 Flask==1.1.2
 numpy==1.19.1
-Pillow==7.2.0
+Pillow==8.1.1
 Flask-Cors==3.0.8
 Flask-RESTful==0.3.8
 OpenCV
